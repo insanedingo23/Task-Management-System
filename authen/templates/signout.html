@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>Are you sure you wanna Signout ??</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">YES</button>
+        <a href="{% url 'profile' %}"><button type="button">NO</button></a>
+    </form>
+{% endblock  %}
+    

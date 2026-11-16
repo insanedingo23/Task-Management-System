@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+  <a href="{% url 'create' %}"><button>ADD TASKS</button></a> <br><br>  
+
+    {% for i in context %}
+      TASK NAME: {{ i.tname }} <br>
+      TASK CATEGORY: {{ i.cat }} <br>
+      TASK DESCRIPTION: {{ i.desc }} <br>
+      TASK ADDED AT: {{ i.tadded_at }} <br>
+      TASK STATUS:  {{ i.tstatus }} <br>
+      <a href="{% url 'update' i.id %}"><button>UPDATE</button></a>
+      <a href="{% url 'delete' i.id %}"><button>DELETE</button></a>
+      <br><br>
+    {% endfor %}
+  
+{% endblock %}

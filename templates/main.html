@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Authentication</title>
+</head>
+<body>
+    <!-- to include the nav.html -->
+    {% include 'nav.html' %}
+    <center>
+        <!-- messages section -->
+        {% if messages %}
+            <section id="messages">
+                {% for i in messages %}
+                    <p style="color: green;">{{ i.message }}</p>
+                {% endfor %}
+            </section>
+        {% endif %}
+
+        {% block content %}
+          
+        {% endblock %}
+    </center>
+
+    <!-- messages disappear after 5sec - JS code -->
+    <script>
+        setTimeout(function(){
+            document.getElementById('messages').style.display = 'none'}, 5000);
+    </script>
+</body>
+</html>

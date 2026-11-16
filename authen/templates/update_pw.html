@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>Update your Password here...</h1>
+    <table border="2">
+        <form method="post">
+            {% csrf_token %}
+            <tr>
+                <td>
+                    <input type="password" name="old_pw" placeholder="Enter your old password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="password" name="new_pw" placeholder="Enter your New Password" required>
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    <input type="password" name="confirm_pw" placeholder="Confirm your new password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">SUBMIT</button>
+                    <a href="{% url 'profile' %}"><button type="button">BACK</button></a>
+                </td>
+            </tr>
+        </form>
+    </table>
+    
+{% endblock  %}
+    

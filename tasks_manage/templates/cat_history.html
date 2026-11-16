@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>These are the categories that are deleted...</h1>
+    <br> <br>
+    {% for i in context %}
+      Category: {{ i.cat }} <br>
+      <a href="{% url 'cat_restore' i.id %}"><button>Restore</button></a>
+      <a href="{% url 'read_cat' %}"><button>Back</button></a>
+    <br><br>
+
+    {% empty %}
+        <p>No items available...</p>
+    {% endfor %}
+{% endblock %}

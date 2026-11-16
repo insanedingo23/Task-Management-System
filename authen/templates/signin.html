@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+  <h1>Sign In with your Credentials here...</h1>\
+  <table border="2">
+    <form method="post">
+        {% csrf_token %}
+        <tr>
+            <td><input type="text" name="un" placeholder="Username" required></td>
+        </tr>
+        <tr>
+            <td><input type="password" name="pw" placeholder="PASSWORD" required></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">SUBMIT</button>
+            </td>
+        </tr>
+        
+    </form>
+  </table>
+
+  <p>Don't have an account?? SIGNUP <a href="{% url 'signup' %}">here</a></p>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+    <a href="{% url 'create_rec' %}"><button>ADD RECORDS FOR USERS</button>
+    </a>
+    <a href="{% url 'create' %}"><button>ADD TASKS</button></a>
+    <a href="{% url 'create_cat' %}"><button>ADD CATEGORY</button></a>
+    <br> <br>
+    {% for i in context %}
+      Category: {{ i.cat }} <br>
+      Task: {{ i.task }} <br>
+      Added At: {{ i.added_at }} <br>
+      Status: {{ i.status }} <br>
+      <a href="{% url 'update_cat' i.id %}"><button>UPDATE</button></a>
+      <a href="{% url 'delete_cat' i.id %}"><button>DELETE</button></a>
+    <br><br>
+    {% endfor %}
+  
+{% endblock %}

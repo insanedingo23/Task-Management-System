@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>Update your details here...</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="fn" value="{{ user.first_name }}" required> <br> 
+        <input type="text" name="ln" value="{{ user.last_name }}" required> <br>
+        <input type="email" name="email" value="{{ user.email }}" required> <br>
+        <input type="text" name="un" value="{{ user.username }}" required> <br>
+        <button type="submit">SUBMIT</button>
+        <a href="{% url 'profile' %}"><button type="button">BACK</button></a>
+    </form>
+{% endblock %}
