@@ -4,6 +4,15 @@
 
   <a href="{% url 'create' %}"><button>ADD TASKS</button></a> <br><br>  
 
+  <form method="get">
+    <input type="search" name="q" placeholder="Search by Task name or Task category" value="{{q}}">
+    <button type="submit">Search</button>
+    {% if q %}
+        <a href="{% url 'read' %}"><button type="button">Clear</button></a>      
+    {% endif %}
+  </form>
+  <br><br> 
+
     {% for i in context %}
       TASK NAME: {{ i.tname }} <br>
       TASK CATEGORY: {{ i.cat }} <br>

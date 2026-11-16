@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+    <h1>These are the tasks that are deleted...</h1>
+    <br> <br>
+    {% for i in context %}
+      Task Name: {{ i.tname }} <br>
+      Category: {{ i.cat }} <br>
+      Description: {{ i.desc }} <br>
+      <a href="{% url 'restore' i.id %}"><button>Restore</button></a>
+      <a href="{% url 'read' %}"><button>Back</button></a>
+    <br><br>
+
+    {% empty %}
+        <p>No items available...</p>
+    {% endfor %}
+{% endblock %}

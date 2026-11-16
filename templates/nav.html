@@ -1,19 +1,13 @@
 <nav>
     <ul>
-        
+        <!-- to check whether the user has signed in -->
         {% if user.is_authenticated %}
-        <li><a href="{% url 'read' %}">HOME</a></li>
-        <li><a href="{% url 'read_cat' %}">CATEGORIES</a></li>
-        <li><a href="{% url 'profile' %}">PROFILE</a></li>
+            <li><a href="{% url 'read' %}">HOME</a></li>
+            <li><a href="{% url 'read_cat' %}">CATEGORIES</a></li>
+            <li><a href="{% url 'profile' %}">PROFILE</a></li>
         {% else %}
-        <a href="{% url 'signup' %}">
-            <li>SIGNUP</li>
-        </a>
-        <a href="{% url 'signin' %}">
-            <li>SIGNIN</li>
-        </a>
+            <a href="{% url 'signup' %}"><li>SIGNUP</li></a>
+            <a href="{% url 'signin' %}"><li>SIGNIN</li></a>
         {% endif %}
-            
-
     </ul>
 </nav>
